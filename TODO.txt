@@ -1,0 +1,12 @@
+
+USER
+    Fname  Lname  TC#  Address  PhoNum  Mail  Password Bdate Type
+
+ACCOUNT
+    TCNum  IBAN  Amount Currency
+
+TRANSACTION
+    senderIBAn  ReceiverIBAN  Amount  Date isRead
+
+CREDIT
+    TCNum  Amount  CreditMonths  Interest  GetCreditDate  Confirmation

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="322.0" prefWidth="233.0" style="-fx-border-color: #1761A0; -fx-border-width: 3; -fx-background-radius: 10; -fx-border-radius: 10;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.NotificationController">
+   <children>
+      <VBox fx:id="notificationVBox" layoutX="11.0" layoutY="63.0" prefHeight="225.0" prefWidth="217.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="60.0" />
+      <Button alignment="CENTER" layoutX="74.0" layoutY="297.0" mnemonicParsing="false" onAction="#viewedAllHandle" prefHeight="23.0" prefWidth="86.0" styleClass="button2" stylesheets="@css/mainsc.css" text="Viewed All" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="74.0" />
+      <Label alignment="CENTER" layoutX="90.0" layoutY="23.0" prefHeight="19.0" prefWidth="115.0" text="Received Money" AnchorPane.leftAnchor="85.0" AnchorPane.topAnchor="23.0">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <ImageView fx:id="notificationIV" fitHeight="40.0" fitWidth="40.0" layoutX="64.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="10.0" />
+   </children>
+</AnchorPane>

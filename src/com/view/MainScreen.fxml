@@ -1,0 +1,688 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.MainScreenController">
+   <children>
+      <AnchorPane prefHeight="550.0" prefWidth="210.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox alignment="TOP_CENTER" layoutX="-6.0" prefHeight="354.0" prefWidth="210.0" styleClass="leftUpPane" stylesheets="@css/mainsc.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#accountsButtonAction" prefHeight="40.0" prefWidth="263.0" styleClass="buttons" stylesheets="@css/mainsc.css" text=" Accounts" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets top="50.0" />
+                     </VBox.margin>
+                     <graphic>
+                        <ImageView fx:id="acc_img" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/account.png" />
+                           </image></ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#transactionButtonAction" prefHeight="40.0" prefWidth="257.0" styleClass="buttons" stylesheets="@css/mainsc.css" text="Transaction" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                     <graphic>
+                        <ImageView fx:id="trans_img" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/transaction.png" />
+                           </image></ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#creditButtonAction" prefHeight="40.0" prefWidth="257.0" styleClass="buttons" stylesheets="@css/mainsc.css" text="  Credit">
+                     <graphic>
+                        <ImageView fx:id="credit_img" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/credit.png" />
+                           </image></ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#historyButtonAction" prefHeight="40.0" prefWidth="257.0" styleClass="buttons" stylesheets="@css/mainsc.css" text="  History">
+                     <graphic>
+                        <ImageView fx:id="historyIV" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/transaction-history.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#settingsButtonAction" prefHeight="40.0" prefWidth="222.0" styleClass="buttons" stylesheets="@css/mainsc.css" text="  Settings">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                     <graphic>
+                        <ImageView fx:id="settings_img" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/settings.png" />
+                           </image></ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="10.0" layoutY="260.0" mnemonicParsing="false" onAction="#logoutButton" prefHeight="40.0" prefWidth="222.0" styleClass="buttons" stylesheets="@css/mainsc.css" text="Log out">
+                     <graphic>
+                        <ImageView fx:id="logoutIV" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/exit.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Button>
+               </children></VBox>
+            <Label fx:id="welcomeLabel" alignment="CENTER" layoutX="9.0" layoutY="170.0" prefHeight="26.0" prefWidth="200.0" text="Label" textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="354.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="170.0">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Label>
+            <ImageView fx:id="logoIV" fitHeight="91.0" fitWidth="158.0" layoutX="26.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/logo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <HBox alignment="CENTER" layoutX="724.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button maxHeight="25.0" maxWidth="30.0" mnemonicParsing="false" onAction="#minimizeButtonAction" styleClass="buttonMin" stylesheets="@css/login.css" text="--" textAlignment="CENTER" textFill="WHITE">
+               <HBox.margin>
+                  <Insets top="5.0" />
+               </HBox.margin>
+            </Button>
+            <Button maxHeight="25.0" maxWidth="30.0" mnemonicParsing="false" onAction="#exitButtonAction" styleClass="buttonExit" stylesheets="@css/login.css" text="X" textAlignment="CENTER" textFill="WHITE">
+               <effect>
+                  <ColorAdjust />
+               </effect>
+               <HBox.margin>
+                  <Insets right="5.0" top="5.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <AnchorPane fx:id="accountPage" layoutX="210.0" layoutY="30.0" prefHeight="520.0" prefWidth="590.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="210.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+         <children>
+            <Button fx:id="addAccountButton" layoutX="413.0" layoutY="450.0" mnemonicParsing="false" onAction="#addAccountHandle" prefHeight="40.0" prefWidth="149.0" styleClass="button2" stylesheets="@css/mainsc.css" text="Add New Account">
+               <graphic>
+                  <ImageView fx:id="newAccountIV" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic></Button>
+            <VBox fx:id="accountVBox" alignment="CENTER" layoutX="117.0" layoutY="269.0" maxHeight="520.0" spacing="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+               <children>
+                  <Button fx:id="accountButton" mnemonicParsing="false" prefHeight="45.0" prefWidth="590.0" styleClass="accView" stylesheets="@css/mainsc.css">
+                     <graphic>
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                           <children>
+                              <ImageView fx:id="currencyIV" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" />
+                              <VBox alignment="CENTER_LEFT" prefWidth="230.0">
+                                 <children>
+                                    <Label fx:id="IBANLabel" text="IBAN" />
+                                    <Label fx:id="moneyLabel" text="Money :" />
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </VBox>
+                              <Label fx:id="depositLabel" text="Deposit Account" visible="false">
+                                 <HBox.margin>
+                                    <Insets left="15.0" right="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Button fx:id="changeMoneyMain" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" mnemonicParsing="false" style="-fx-background-color: transparent;">
+                                 <graphic>
+                                    <ImageView fx:id="changeMoneyIV" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+                                 </graphic>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                                 <padding>
+                                    <Insets bottom="3.0" left="5.0" right="5.0" top="3.0" />
+                                 </padding>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets left="20.0" right="20.0" />
+                           </padding>
+                        </HBox>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="28.0" prefWidth="573.0" style="-fx-background-color: #1761A0; -fx-background-radius: 25 0 0 25;" text="Currency Accounts" textAlignment="CENTER" textFill="WHITE" HBox.hgrow="NEVER" />
+                        <Button fx:id="refreshButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#refreshButtonHandle" prefWidth="70.0" styleClass="button3" stylesheets="@css/mainsc.css">
+                           <graphic>
+                              <ImageView fx:id="refreshIV" fitHeight="21.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true" rotate="160.3" />
+                           </graphic>
+                           <HBox.margin>
+                              <Insets bottom="1.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <PieChart fx:id="myMoneyPC" labelLineLength="5.0" labelsVisible="false" layoutX="14.0" layoutY="324.0" prefHeight="195.0" prefWidth="250.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="10.0" />
+            <VBox fx:id="currencyVBox" layoutX="262.0" layoutY="341.0" prefHeight="170.0" prefWidth="137.0" spacing="3.0" />
+            <TextField fx:id="baseTF" layoutX="413.0" layoutY="343.0" promptText="Base: USD etc." styleClass="text-field" stylesheets="@css/mainsc.css" />
+            <TextField fx:id="toTF" layoutX="413.0" layoutY="376.0" promptText="To : TRY etc." styleClass="text-field" stylesheets="@css/mainsc.css" />
+            <Button fx:id="currencySearchButton" alignment="CENTER" layoutX="413.0" layoutY="408.0" mnemonicParsing="false" onAction="#searchExcButton" prefHeight="27.0" prefWidth="149.0" styleClass="button2" stylesheets="@css/mainsc.css" text="Search" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="transactionPage" layoutX="210.0" layoutY="30.0" prefHeight="520.0" prefWidth="590.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="210.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="30.0" prefWidth="590.0" style="-fx-background-color: #419A1C; -fx-background-radius: 10 10 10 10;" text="Transfer" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="0.0" />
+            <HBox layoutX="195.0" layoutY="25.0" prefHeight="495.0" prefWidth="590.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+               <children>
+                  <VBox prefHeight="479.0" prefWidth="292.0" style="-fx-border-color: transparent #419A1C transparent  transparent;">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="26.0" prefWidth="228.0" text="Receiver Name/Surname">
+                           <VBox.margin>
+                              <Insets left="20.0" top="20.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="recevNameSurname" prefHeight="25.0" prefWidth="263.0" stylesheets="@css/mainsc.css">
+                           <VBox.margin>
+                              <Insets left="20.0" right="40.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Label fx:id="nameSurInf" prefHeight="17.0" prefWidth="229.0" text="Label" visible="false">
+                           <VBox.margin>
+                              <Insets left="20.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="232.0" text="Receiver IBAN">
+                           <VBox.margin>
+                              <Insets left="20.0" top="40.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="recevIBAN" stylesheets="@css/mainsc.css">
+                           <VBox.margin>
+                              <Insets left="20.0" right="40.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Label fx:id="IBANInf" prefHeight="43.0" prefWidth="227.0" text="Label" visible="false" wrapText="true">
+                           <VBox.margin>
+                              <Insets left="20.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="233.0" text="Amount">
+                           <VBox.margin>
+                              <Insets left="20.0" top="20.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="recevAmount" styleClass="text-field" stylesheets="@css/mainsc.css">
+                           <VBox.margin>
+                              <Insets left="20.0" right="40.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Label fx:id="amountInf" prefHeight="17.0" prefWidth="231.0" text="Label" visible="false">
+                           <VBox.margin>
+                              <Insets left="20.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="233.0" text="Your IBAN">
+                           <VBox.margin>
+                              <Insets left="20.0" top="20.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="yourIBAN" alignment="CENTER" opacity="0.7" prefHeight="17.0" prefWidth="235.0" text="Select an IBAN">
+                           <VBox.margin>
+                              <Insets left="20.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Button fx:id="sendButton" mnemonicParsing="false" onAction="#sendTransactionButtonHandle" prefHeight="25.0" prefWidth="75.0" style="-fx-background-color: #1761A0; -fx-background-radius: 10;" text="Send" textFill="#fff7f7">
+                           <VBox.margin>
+                              <Insets left="20.0" top="20.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Label fx:id="sendInf" text="Label" visible="false">
+                           <VBox.margin>
+                              <Insets left="20.0" top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="495.0" prefWidth="299.0" style="-fx-border-color: transparent #419A1C transparent transparent;">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="30.0" prefWidth="299.0" text="Select Account">
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="20.0" />
+                           </VBox.margin>
+                        </Label>
+                        <VBox fx:id="transAccount" prefHeight="428.0" prefWidth="290.0" spacing="3.0">
+                           <padding>
+                              <Insets left="5.0" top="5.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="creditPage" layoutX="220.0" layoutY="30.0" prefHeight="520.0" prefWidth="590.0" visible="false">
+         <children>
+            <Label alignment="CENTER" layoutX="17.0" layoutY="-1.0" prefHeight="30.0" prefWidth="542.0" style="-fx-background-color: #419A1C; -fx-background-radius: 10 10 10 10;" text="Credit" />
+            <HBox layoutX="-7.0" layoutY="29.0" prefHeight="495.0" prefWidth="590.0">
+               <children>
+                  <Pane prefHeight="495.0" prefWidth="385.0">
+                     <children>
+                        <VBox fx:id="creditApplyVbox" disable="true" prefHeight="479.0" prefWidth="292.0" style="-fx-border-color: transparent #419A1C transparent  transparent;" visible="false">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="26.0" prefWidth="228.0" text="Name Surname">
+                                 <VBox.margin>
+                                    <Insets left="20.0" top="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="creditName" alignment="CENTER" prefHeight="17.0" prefWidth="229.0" text="Label">
+                                 <VBox.margin>
+                                    <Insets left="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="17.0" prefWidth="233.0" text="Amount">
+                                 <VBox.margin>
+                                    <Insets left="20.0" top="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextField fx:id="creditAmount" prefHeight="25.0" prefWidth="169.0">
+                                 <VBox.margin>
+                                    <Insets left="50.0" right="70.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <Label fx:id="totalAmount" prefHeight="52.0" prefWidth="170.0" text="Hesaptaki para" wrapText="true">
+                                 <VBox.margin>
+                                    <Insets left="50.0" right="70.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="17.0" prefWidth="233.0" text="Month">
+                                 <VBox.margin>
+                                    <Insets left="20.0" top="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <ComboBox fx:id="monthCredit" prefWidth="150.0">
+                                 <VBox.margin>
+                                    <Insets left="55.0" />
+                                 </VBox.margin>
+                              </ComboBox>
+                              <Label alignment="CENTER" prefHeight="22.0" prefWidth="222.0" text="Interest   %15">
+                                 <VBox.margin>
+                                    <Insets left="20.0" top="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="interestCredit" alignment="CENTER" prefHeight="22.0" prefWidth="228.0">
+                                 <VBox.margin>
+                                    <Insets left="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="17.0" prefWidth="229.0" text="Get Credit Date">
+                                 <VBox.margin>
+                                    <Insets left="20.0" top="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="getCreditDate" alignment="CENTER" prefHeight="17.0" prefWidth="234.0" text="tarih">
+                                 <VBox.margin>
+                                    <Insets left="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="17.0" prefWidth="236.0" text="Monthly Payment Day">
+                                 <VBox.margin>
+                                    <Insets left="20.0" top="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <ComboBox fx:id="monthlyPayment" prefWidth="150.0">
+                                 <VBox.margin>
+                                    <Insets left="55.0" />
+                                 </VBox.margin>
+                              </ComboBox>
+                              <Button fx:id="sendButtonCredit" mnemonicParsing="false" onAction="#applyCreditHandle" prefHeight="25.0" prefWidth="75.0" style="-fx-background-color: #1761A0; -fx-background-radius: 10;" text="Apply" textFill="#fff7f7">
+                                 <VBox.margin>
+                                    <Insets left="35.0" top="20.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
+                        <VBox fx:id="paymentVbox" prefHeight="495.0" prefWidth="292.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="19.0" prefWidth="227.0" style="-fx-background-color: #419A1C; -fx-background-radius: 10;" text="Payment Credit" textFill="WHITE">
+                                 <VBox.margin>
+                                    <Insets left="40.0" top="15.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label text="Select Account">
+                                 <VBox.margin>
+                                    <Insets left="10.0" top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TableView fx:id="selectAccountTable" prefHeight="137.0" prefWidth="280.0">
+                                <columns>
+                                  <TableColumn fx:id="ibanTable" editable="false" prefWidth="130.0" resizable="false" sortable="false" text="Accounts IBAN" />
+                                  <TableColumn fx:id="amountAcTable" editable="false" prefWidth="85.0" resizable="false" sortable="false" text="Amount" />
+                                    <TableColumn fx:id="currencyTable" editable="false" prefWidth="65.0" resizable="false" sortable="false" text="Currency" />
+                                </columns>
+                                 <VBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </VBox.margin>
+                              </TableView>
+                              <Label fx:id="warText" text="Please select another account. Your amount is not enough!" textFill="#fc0606" visible="false" wrapText="true">
+                                 <VBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label prefHeight="17.0" prefWidth="103.0" text="Select Credit Bills">
+                                 <VBox.margin>
+                                    <Insets left="5.0" top="25.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TableView fx:id="selectCreditTable" prefHeight="142.0" prefWidth="280.0">
+                                <columns>
+                                    <TableColumn fx:id="paymentDateCol" editable="false" prefWidth="100.0" resizable="false" text="Due Date" />
+                                  <TableColumn fx:id="amountCol" editable="false" prefWidth="100.0" resizable="false" sortable="false" text="Amount" />
+                                  <TableColumn fx:id="feeCol" editable="false" resizable="false" sortable="false" text="Late Fee " />
+                                </columns>
+                                 <VBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </VBox.margin>
+                              </TableView>
+                              <Button mnemonicParsing="false" onAction="#paymentButtonHandle" text="Payment">
+                                 <VBox.margin>
+                                    <Insets left="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Label fx:id="successText" prefHeight="17.0" prefWidth="63.0" text="Success!" textFill="GREEN" visible="false">
+                                 <VBox.margin>
+                                    <Insets left="7.0" top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </Pane>
+                  <VBox prefHeight="495.0" prefWidth="389.0" style="-fx-border-color: transparent #419A1C transparent transparent;">
+                     <children>
+                        <Label fx:id="titleCreditLabel" alignment="CENTER" prefHeight="17.0" prefWidth="223.0" style="-fx-background-color: #419A1C; -fx-background-radius: 10;" text="Accepted or Waiting Credits" textFill="#fffdfd">
+                           <VBox.margin>
+                              <Insets left="40.0" top="15.0" />
+                           </VBox.margin>
+                        </Label>
+                        <HBox fx:id="showCreditDetail" prefHeight="91.0" prefWidth="287.0" style="-fx-background-color: #1761A0; -fx-background-radius: 10;">
+                           <children>
+                              <VBox prefHeight="75.0" prefWidth="158.0">
+                                 <children>
+                                    <Label fx:id="creditAmountLayer" prefHeight="22.0" prefWidth="158.0" text="Amount: " textFill="WHITE">
+                                       <VBox.margin>
+                                          <Insets left="5.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label fx:id="amountPaidLayer" prefHeight="19.0" prefWidth="153.0" text="Amount Paid: " textFill="WHITE">
+                                       <VBox.margin>
+                                          <Insets left="5.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label fx:id="restAmountLayer" prefHeight="21.0" prefWidth="153.0" text="Rest of Amount: " textFill="WHITE">
+                                       <VBox.margin>
+                                          <Insets left="5.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label fx:id="creditMonthsLabel" prefHeight="17.0" prefWidth="143.0" text="Credit Months:" textFill="#fffefe">
+                                       <VBox.margin>
+                                          <Insets left="5.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="75.0" prefWidth="128.0">
+                                 <children>
+                                    <Label text="Get Credit Date" textFill="#fffafa">
+                                       <VBox.margin>
+                                          <Insets left="5.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label fx:id="getCreditLayer" text="Label" textFill="#f8f8f8">
+                                       <VBox.margin>
+                                          <Insets left="5.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label text="Monthly Payment Day" textFill="WHITE">
+                                       <VBox.margin>
+                                          <Insets left="5.0" top="10.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label fx:id="monthlyPayLabel" text="Label" textFill="WHITE">
+                                       <VBox.margin>
+                                          <Insets left="5.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="5.0" right="5.0" top="3.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="historyPage" layoutX="271.0" layoutY="48.0" prefHeight="306.0" prefWidth="291.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="210.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+         <children>
+            <TableView fx:id="table" layoutX="5.0" prefHeight="250.0" prefWidth="580.0" stylesheets="@css/mainsc.css" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="0.0">
+              <columns>
+                  <TableColumn maxWidth="580.0" prefWidth="580.0" resizable="false" text="SENT">
+                     <columns>
+                      <TableColumn fx:id="col_sender" editable="false" prefWidth="150.0" resizable="false" sortable="false" text="Receiver Name" />
+                      <TableColumn fx:id="col_receiver" editable="false" prefWidth="180.0" resizable="false" sortable="false" text="Receiver IBAN" />
+                        <TableColumn fx:id="col_amount" editable="false" prefWidth="130.0" resizable="false" sortable="false" text="Amount" />
+                        <TableColumn fx:id="col_Tdate" editable="false" prefWidth="120.0" sortable="false" text="Date" />
+                     </columns>
+                  </TableColumn>
+              </columns>
+            </TableView>
+            <TableView fx:id="table1" layoutX="5.0" layoutY="250.0" prefHeight="250.0" prefWidth="580.0" stylesheets="@css/mainsc.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="250.0">
+               <columns>
+                  <TableColumn maxWidth="580.0" prefWidth="580.0" resizable="false" text="RECEIVED">
+                     <columns>
+                        <TableColumn fx:id="col_sender1" editable="false" prefWidth="150.0" resizable="false" sortable="false" text="Sender Name" />
+                        <TableColumn fx:id="col_receiver1" editable="false" prefWidth="180.0" resizable="false" sortable="false" text="Receiver IBAN" />
+                        <TableColumn fx:id="col_amount1" editable="false" prefWidth="130.0" resizable="false" sortable="false" text="Amount" />
+                        <TableColumn fx:id="col_Tdate1" editable="false" prefWidth="120.0" resizable="false" sortable="false" text="Date" />
+                     </columns>
+                  </TableColumn>
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="settingsPage" layoutX="210.0" layoutY="30.0" prefHeight="520.0" prefWidth="590.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="210.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="17.0" prefWidth="573.0" style="-fx-background-color: #1761A0; -fx-background-radius: 25;" text="Settings" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="5.0">
+               <font>
+                  <Font size="13.0" />
+               </font></Label>
+            <VBox layoutX="22.0" layoutY="40.0" prefHeight="211.0" prefWidth="265.0" style="-fx-border-color: #419A1C; -fx-border-width: 5; -fx-border-radius: 20 20 0 20;" AnchorPane.leftAnchor="20.0">
+               <children>
+                  <Label text="Change Password">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" top="5.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label text="Current Password">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="currentPasswordTF">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="10.0" right="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Label text="New Password">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="newPasswordTF">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="10.0" right="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Button mnemonicParsing="false" onAction="#changePasswordHandle" prefHeight="26.0" prefWidth="77.0" style="-fx-background-color: #1761A0;" text="Change" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets left="165.0" top="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Label fx:id="passwordInf" text="Label">
+                     <VBox.margin>
+                        <Insets left="10.0" top="2.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox layoutX="302.0" layoutY="40.0" prefHeight="211.0" prefWidth="265.0" style="-fx-border-color: #1761A0; -fx-border-width: 5; -fx-border-radius: 20 20 20 0;" AnchorPane.rightAnchor="20.0">
+               <children>
+                  <Label text="Change Mail">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" top="5.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label text="Current Mail">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="currentMailLabel" text="Mail">
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label text="New Mail">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="newMailTF">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="10.0" right="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Button mnemonicParsing="false" onAction="#changeMailHandle" prefHeight="26.0" prefWidth="77.0" style="-fx-background-color: #419A1C;" text="Change" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets left="165.0" top="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Label fx:id="mailInf" text="Label">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <VBox.margin>
+                        <Insets left="10.0" top="2.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="22.0" layoutY="267.0" prefHeight="211.0" prefWidth="265.0" style="-fx-border-color: #1761A0; -fx-border-width: 5; -fx-border-radius: 20 0 20 20;" AnchorPane.leftAnchor="20.0">
+               <children>
+                  <ImageView fx:id="logo" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/logo.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </VBox>
+            <VBox layoutX="302.0" layoutY="267.0" prefHeight="211.0" prefWidth="265.0" style="-fx-border-color: #419A1C; -fx-border-width: 5; -fx-border-radius: 0 20 20 20;" AnchorPane.rightAnchor="20.0">
+               <children>
+                  <Label text="Change Address">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" top="5.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label text="Current Address">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="currentAddressLabel" text="Address">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label text="New Address">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextArea fx:id="newAddressTF" prefHeight="0.0" prefWidth="254.0" wrapText="true">
+                     <VBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </VBox.margin>
+                  </TextArea>
+                  <Button mnemonicParsing="false" onAction="#changeAddressHandle" prefHeight="26.0" prefWidth="77.0" style="-fx-background-color: #1761A0;" text="Change" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets left="165.0" top="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Label fx:id="addressInf" text="Label">
+                     <VBox.margin>
+                        <Insets left="10.0" top="2.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

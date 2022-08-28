@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<Button fx:id="accountButton" minHeight="45.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="590.0" styleClass="accView" stylesheets="@css/mainsc.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <graphic>
+      <HBox alignment="CENTER_LEFT" prefHeight="37.0" prefWidth="524.0" spacing="10.0">
+         <children>
+            <ImageView fx:id="currencyImage" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></ImageView>
+            <VBox alignment="CENTER_LEFT" minWidth="230.0">
+               <children>
+                  <Label fx:id="IBANLabel">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Label>
+                  <Label fx:id="MoneyLabel" text="Label">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Label>
+               </children>
+            </VBox>
+            <Label fx:id="depositLabel" text="Deposit Account" visible="false">
+               <HBox.margin>
+                  <Insets left="15.0" right="5.0" />
+               </HBox.margin>
+            </Label>
+            <Button fx:id="changeMoney" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" mnemonicParsing="false" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fx:id="changeMoneyIV" fitHeight="30.0" fitWidth="30.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+               <padding>
+                  <Insets bottom="3.0" left="5.0" right="5.0" top="3.0" />
+               </padding>
+            </Button>
+         </children>
+         <padding>
+            <Insets left="20.0" right="20.0" />
+         </padding>
+      </HBox>
+   </graphic>
+   <cursor>
+      <Cursor fx:constant="HAND" />
+   </cursor>
+</Button>

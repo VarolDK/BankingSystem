@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.LoginScreenController">
+   <children>
+      <HBox alignment="CENTER_RIGHT" layoutX="724.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button fx:id="minimizeButton" maxHeight="25.0" maxWidth="30.0" mnemonicParsing="false" onAction="#minimizeButton" styleClass="buttonMin" stylesheets="@css/login.css" text="--" textAlignment="CENTER" textFill="WHITE">
+               <HBox.margin>
+                  <Insets top="5.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="exitButton" maxHeight="25.0" maxWidth="30.0" mnemonicParsing="false" onAction="#exitButton" styleClass="buttonExit" stylesheets="@css/login.css" text="X" textAlignment="CENTER" textFill="WHITE">
+               <effect>
+                  <ColorAdjust />
+               </effect>
+               <HBox.margin>
+                  <Insets right="5.0" top="5.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <ImageView fx:id="logo" fitHeight="150.0" fitWidth="200.0" layoutX="325.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/logo.png" />
+         </image>
+      </ImageView>
+      <VBox layoutX="198.0" layoutY="180.0" prefHeight="218.0" prefWidth="405.0" style="-fx-border-color: #419A1C;" AnchorPane.leftAnchor="198.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="37.0" prefWidth="440.0" style="-fx-background-color: #419A1C;" text="Secure Login" textFill="WHITE">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Label>
+            <Label layoutX="10.0" layoutY="15.0" text="TC">
+               <VBox.margin>
+                  <Insets left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="TCTF" prefHeight="25.0" prefWidth="316.0" styleClass="text-field" stylesheets="@css/mainsc.css">
+               <VBox.margin>
+                  <Insets left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </TextField>
+            <Label text="Password">
+               <VBox.margin>
+                  <Insets left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </Label>
+            <PasswordField fx:id="passwordPF" styleClass="text-field" stylesheets="@css/mainsc.css">
+               <VBox.margin>
+                  <Insets left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </PasswordField>
+            <Pane prefHeight="40.0" prefWidth="403.0">
+               <children>
+                  <Button alignment="CENTER" layoutY="8.0" mnemonicParsing="false" onAction="#loginUserHandle" prefHeight="25.0" prefWidth="64.0" styleClass="button2" stylesheets="@css/mainsc.css" text="Login" />
+                  <Label fx:id="loginWrongL" layoutX="64.0" layoutY="12.0" text="TC or Password was wrong" textFill="RED" visible="false">
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </VBox.margin>
+            </Pane>
+            <Label onMouseClicked="#singUpButtonHandle" text="Sign up" underline="true">
+               <VBox.margin>
+                  <Insets left="15.0" right="5.0" top="3.0" />
+               </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
